@@ -1,0 +1,10 @@
+{% if score %}
+<p>Your review "{{ input_text }}" is evaluated with a score of {{ score }}.</p>
+{% endif %}
+
+<form method="post" action="{% url 'home' %}">
+    {% csrf_token %}
+    <label for="input_text">Enter your movie review:</label><br>
+    <textarea id="input_text" name="input_text"></textarea><br>
+    <input type="submit" value="Submit">
+</form>
